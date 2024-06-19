@@ -10,6 +10,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+      - name: setup bun
+        uses: oven-sh/setup-bun@v1
+        with:
+            bun-version: "1.0.25"
       - name: Install bun
         run: bun install
       - name: Build project
