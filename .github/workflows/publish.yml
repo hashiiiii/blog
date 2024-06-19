@@ -16,8 +16,10 @@ jobs:
             bun-version: "1.0.25"
       - name: Install bun
         run: bun install
+      - name: Install vite-ssg
+        run: bun add vite @hono/vite-ssg
       - name: Build project
-        run: bun run dev
+        run: bun run build
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
