@@ -2,7 +2,7 @@
   "name": "blog",
   "type": "module",
   "scripts": {
-    "dev": "bunx --bun vite build"
+    "build": "bunx --bun vite build"
   },
   "dependencies": {
     "@hono/vite-ssg": "^0.1.0",
