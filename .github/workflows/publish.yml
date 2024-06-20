@@ -18,7 +18,7 @@ jobs:
       - name: Build project
         run: bun run build
       - name: Deploy to artifact
-        uses: actions/upload-pages-artifact@v2.0.0
+        uses: actions/upload-pages-artifact@v4.0.0
         with:
           path: ./dist
 
@@ -34,4 +34,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
