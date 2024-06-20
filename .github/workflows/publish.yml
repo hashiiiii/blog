@@ -9,10 +9,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'
       - name: Setup bun
         uses: oven-sh/setup-bun@v1
         with:
@@ -22,7 +18,7 @@ jobs:
       - name: Build project
         run: bun run build
       - name: Deploy to artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v2.0.0
         with:
           path: ./dist
 
