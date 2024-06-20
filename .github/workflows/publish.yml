@@ -1,34 +1,24 @@
 name: publish
-
 on:
   push:
     branches:
       - main
 jobs:
-  deploy:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: setup bun
+        uses: actions/checkout@v4
+      - name: Setup bun
         uses: oven-sh/setup-bun@v1
         with:
-            bun-version: "1.0.25"
-      - name: Install bun
-        run: bun install
+          bun-version: latest
       - name: Install vite-ssg
         run: bun add vite @hono/vite-ssg
       - name: Build project
-        run: bun run build
-      - name: List
-        run: ls -R ./dist
+        run: build
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        env:
-          ACTIONS_RUNNER_DEBUG: true
-          ACTIONS_STEP_DEBUG: true
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          publish_branch: gh-pages
-          force_orphan: true
