@@ -16,7 +16,7 @@ jobs:
       - name: Install vite-ssg
         run: bun add vite @hono/vite-ssg
       - name: Build project
-        run: build
+        run: bun run build
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
