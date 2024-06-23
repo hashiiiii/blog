@@ -1,9 +1,6 @@
 {
   "name": "blog",
   "type": "module",
-  "scripts": {
-    "build": "bunx --bun vite build"
-  },
   "devDependencies": {
     "@types/bun": "1.1.5",
     "@hono/vite-ssg": "0.1.0",
