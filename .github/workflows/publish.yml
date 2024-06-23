@@ -17,7 +17,7 @@ jobs:
       - name: Install packages
         run: bun install
       - name: List installed packages
-        run: bun list
+        run: ls node_modules
       - name: Check Vite version
         run: |
           export PATH="./node_modules/.bin:$PATH"
