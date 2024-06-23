@@ -16,16 +16,10 @@ jobs:
           bun-version: 1.1.5
       - name: Install packages
         run: bun install
-      - name: List installed packages
-        run: ls node_modules
-      - name: Check Vite version
-        run: |
-          export PATH="./node_modules/.bin:$PATH"
-          vite --version
+      - name: Export path
+        run: export PATH="./node_modules/.bin:$PATH"
       - name: Build project
-        run: |
-          export PATH="./node_modules/.bin:$PATH"
-          vite build
+        run: vite build
       - name: Deploy to artifact
         uses: actions/upload-pages-artifact@v3
         with:
