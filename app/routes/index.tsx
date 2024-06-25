@@ -1,7 +1,9 @@
-import { Hono } from 'hono'
+import { createRoute } from 'honox/factory'
 
-const app = new Hono()
-
-app.get('/', (c) => c.html('Hello, World!'))
-
-export default app
+export default createRoute((c) => {
+    return c.render(
+        <div>
+            <h1>Hello!</h1>
+        </div>
+    )
+})
