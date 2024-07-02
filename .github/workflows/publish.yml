@@ -17,7 +17,7 @@ jobs:
       - name: install packages
         run: bun install
       - name: build project
-        run: bunx --bun vite build
+        run: vite build
       - name: deploy to artifact
         uses: actions/upload-pages-artifact@v3
         with:
