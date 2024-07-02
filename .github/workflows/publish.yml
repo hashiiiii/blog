@@ -16,6 +16,10 @@ jobs:
           bun-version: latest
       - name: install packages
         run: bun install
+      - name: Build project
+        run: |
+          export PATH="./node_modules/.bin:$PATH"
+          vite build
       - name: build project
         run: vite build
       - name: deploy to artifact
