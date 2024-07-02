@@ -8,17 +8,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: checkout repository
         uses: actions/checkout@v4
-      - name: Setup bun
+      - name: setup bun
         uses: oven-sh/setup-bun@v1
         with:
-          bun-version: 1.1.5
-      - name: Install packages
+          bun-version: latest
+      - name: install packages
         run: bun install
-      - name: Build project
-        run: bunx vite build
-      - name: Deploy to artifact
+      - name: build project
+        run: bunx --bun vite build
+      - name: deploy to artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
@@ -33,6 +33,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to GitHub Pages
+      - name: deploy to github pages
         id: deployment
         uses: actions/deploy-pages@v4
