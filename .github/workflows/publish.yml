@@ -20,8 +20,6 @@ jobs:
         run: |
           export PATH="./node_modules/.bin:$PATH"
           vite build
-      - name: build project
-        run: vite build
       - name: deploy to artifact
         uses: actions/upload-pages-artifact@v3
         with:
