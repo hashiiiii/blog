@@ -16,10 +16,10 @@ jobs:
           bun-version: latest
       - name: install packages
         run: bun install
-      - name: add node_modules/.bin to PATH
-        run: echo 'PATH=./node_modules/.bin:$PATH' >> $GITHUB_ENV
       - name: build project
-        run: vite build
+        run: |
+          export PATH="./node_modules/.bin:$PATH"
+          vite build
       - name: deploy to artifact
         uses: actions/upload-pages-artifact@v3
         with:
